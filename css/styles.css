@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+body{
+    background-color: #50475A;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-gap: 20px;
+
+    grid-template-columns: 3fr 1fr;
+    /* grid-template-rows: 1fr 11fr 3fr; */
+    grid-template-areas:    "menu     menu"
+                            "section  nav"
+                            "footer   footer";
+}
+
+
+.menu ul li {
+    text-decoration: none;
+    display: inline-block;
+    padding: 20px;
+}
+.menu ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    padding-bottom: 5px;
+}
+/* animacion de barrita */
+.menu ul li a:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all .3s;
+}
+.menu ul li a:hover:before {
+    width: 100%;
+}
+
+
+.menu{
+    background-color: #E47954;
+    grid-area: menu;
+}
+/* estilos de la pagina */
+
+.nav {
+    background-color: #9C3C58;
+    grid-area: nav;
+}
+.section {
+    background-color: #EFD560;
+    grid-area: section;
+}
+.footer {
+    background-color: #543159;
+    grid-area: footer;
+}
+
+/* nav con diferentes items */
+
+.nav ul {
+    list-style: none;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.nav ul li {
+    font-size: 20px;
+    padding: 10px 0 10px 0;
+    transition: background 0.5s;
+}
+.nav ul li:hover {
+    background-color: #802f46;
+}
+
+/* info */
+.info {
+    padding: 20px;
+}
+.info h3, .info p{
+    font-size: 50px;
+    color: #000;
+}
+.info p{
+    font-size: 30px;
+    animation-duration: 3s;
+    animation-name: slideon;
+}
+
+@keyframes slideon {
+  from {
+    margin-left: -200%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+.info h3{
+    text-align: center;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 10%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
